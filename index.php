@@ -22,7 +22,7 @@ if (isset($_GET['search'])) {
   <header>
     <div class="container">
       <div class="header-actions">
-        <a href="/video-streaming">
+        <a href="/">
           <h2>Video Streaming App</h2>
         </a>
 
@@ -33,7 +33,7 @@ if (isset($_GET['search'])) {
           </form>
         </div>
 
-        <a href="/video-streaming/upload/">
+        <a href="/upload/">
           <button>Upload Video</button>
         </a>
       </div>
@@ -53,7 +53,7 @@ if (isset($_GET['search'])) {
           }
           foreach ($files as $file) {
         ?>
-          <a href="video?name=<?php echo $file ?>">
+          <a href="/video?name=<?php echo $file ?>">
             <div class="video-container">
               <div class="thumbnail">
                 <video>

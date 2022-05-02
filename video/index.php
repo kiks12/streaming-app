@@ -16,7 +16,7 @@ $videoName = $_GET['name'];
 
   <header>
     <div class="container">
-      <a href='/video-streaming'>
+      <a href='/'>
         <h2>Video Streaming App</h2>
       </a>
     </div>
@@ -32,7 +32,7 @@ $videoName = $_GET['name'];
           <p><?php echo $videoName ?></p>
         </div>
         <div class="video-player-actions">
-          <a href="/video-streaming/video/delete?name=<?php echo $videoName ?>">
+          <a href="/video/delete?name=<?php echo $videoName ?>">
             <button>Delete Video</button>
           </a>
         </div>

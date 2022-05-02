@@ -27,7 +27,7 @@
       <div class="card">
         <h1>Message</h1>
         <p><?php echo 'File already exists<br>' ?></p>
-        <a href="/video-streaming/">
+        <a href="/">
           <button>Okay</button>
         </a>
       </div>
@@ -52,7 +52,7 @@
           }
         ?>
         </p>
-        <a href="/video-streaming/">
+        <a href="/">
           <button>Okay</button>
         </a>
       </div>
