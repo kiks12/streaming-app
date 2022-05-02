@@ -24,13 +24,18 @@
 
   <main>
     <div class="container">
-      <form method="POST" action="action.php" enctype="multipart/form-data">
+      <form 
+        method="POST" 
+        action="action.php" 
+        enctype="multipart/form-data"
+        class="upload-actions"
+      >
         <input type="file" name="video" id="file" accept="video/mp4,video/x-m4v,video/" required/>
         <button type="submit">Upload</button>
       </form>
       <div>
         <video id="video" width="720" height="480" controls>
-          <source id="videoSource" type="video/mp4">
+          <source id="videoSource">
         </video>
       </div>
     </div>

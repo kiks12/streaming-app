@@ -13,11 +13,30 @@ $videoName = $_GET['name'];
   <link rel="stylesheet" href="../index.css">
 </head>
 <body>
+
+  <header>
+    <div class="container">
+      <a href='/video-streaming'>
+        <h2>Video Streaming App</h2>
+      </a>
+    </div>
+  </header>
+
   <main>
     <div class="container">
-      <video width="720" height="480" autoplay controls>
-        <source src="<?php echo '../videos/' . $videoName ?>">
-      </video>
+      <div class="video-player-parent-container">
+        <div class="video-player-container">
+          <video width="720" height="480" autoplay controls>
+            <source src="<?php echo '../videos/' . $videoName ?>">
+          </video>
+          <p><?php echo $videoName ?></p>
+        </div>
+        <div class="video-player-actions">
+          <a href="/video-streaming/video/delete?name=<?php echo $videoName ?>">
+            <button>Delete Video</button>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
 </body>

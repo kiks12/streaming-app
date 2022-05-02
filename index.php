@@ -1,6 +1,11 @@
 <?php
 
 // include('./connection/index.php');
+if (isset($_GET['search'])) {
+  $search = $_GET['search'];
+} else {
+  $search = '';
+}
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +23,14 @@
     <div class="container">
       <div class="header-actions">
         <h2>Video Streaming App</h2>
+
+        <div>
+          <form class="search-container">
+            <input class="form-control" type="text" name="search" placeholder="Search..."/>
+            <button type='submit'>Search</button>
+          </form>
+        </div>
+
         <a href="/video-streaming/upload/">
           <button>Upload Video</button>
         </a>
@@ -31,13 +44,20 @@
 
         <?php
           $files = array_diff(scandir('videos'), array('.', '..'));
+          if ($search) {
+            $files = array_filter($files, function($file) use ($search) {
+              return strpos($file, $search) !== false;
+            });
+          }
           foreach ($files as $file) {
         ?>
           <a href="video?name=<?php echo $file ?>">
             <div class="video-container">
-              <video>
-                <source src="<?php echo 'videos/' . $file ?>" type="video/mp4">
-              </video>
+              <div class="thumbnail">
+                <video>
+                  <source src="<?php echo 'videos/' . $file ?>" type="video/mp4">
+                </video>
+              </div>
               <p><?php echo str_replace(".mp4", "", $file) ?></p>
             </div>
           </a>
