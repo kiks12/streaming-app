@@ -18,7 +18,7 @@
   $fileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
   if (!file_exists($directory)) {
-    mkdir($directory, 755);
+    mkdir($directory, 777);
   }
 
   if (file_exists($file)) {
