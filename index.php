@@ -22,7 +22,9 @@ if (isset($_GET['search'])) {
   <header>
     <div class="container">
       <div class="header-actions">
-        <h2>Video Streaming App</h2>
+        <a href="/video-streaming">
+          <h2>Video Streaming App</h2>
+        </a>
 
         <div>
           <form class="search-container">
@@ -46,7 +48,7 @@ if (isset($_GET['search'])) {
           $files = array_diff(scandir('videos'), array('.', '..'));
           if ($search) {
             $files = array_filter($files, function($file) use ($search) {
-              return strpos($file, $search) !== false;
+              return strpos(strtolower($file), strtolower($search)) !== false;
             });
           }
           foreach ($files as $file) {
