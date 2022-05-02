@@ -12,13 +12,14 @@
   <main>
   <?php
 
-  echo ini_set('post_max_size', '1G');
-
   $directory = '../videos/';
   $file = $directory . basename($_FILES['video']['name']);
   $uploadOk = 1;
   $fileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
+  if (!file_exists($directory)) {
+    mkdir($directory, 755);
+  }
 
   if (file_exists($file)) {
     $uploadOk = 0;
